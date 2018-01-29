@@ -1,19 +1,21 @@
 <template>
     
-    <li :class="{done: completed}">{{ name }}</li>
+    <li>{{ name }} <span v-if="completed">X</span></li>
 
 </template>
 
 <script>
 export default {
-  props: ['name','completed','priority']
+  props: ['name','completed','priority'],
+  data(){ 
+
+  },
+  methods: {
+
+  }
 }
 </script>
 
 <style>
-
-.done{
-    text-decoration: line-through;
-}
 
 </style>

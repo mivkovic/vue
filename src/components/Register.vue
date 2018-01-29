@@ -2,14 +2,14 @@
    <div class='register-form'>
      <h1>Register Form</h1>
      <form class='form'>
-        <Input type='text' placeholder="First Name" name="firstName" @onBlurr="onFNameChange"/>
-         <Input type='text' placeholder="Last Name" name="lastName" @onBlurr="onNameChange"/>
-        <Input type="email" placeholder="Email" name="email" @onBlurr="onEmailChange"/>
-        <Input type='text' placeholder="Company" name="company" @onBlurr="onCompanyChange"/>
+        <Input type='text' placeholder="First Name" name="firstName" @onBlur="onFNameChange"/>
+         <Input type='text' placeholder="Last Name" name="lastName" @onBlur="onNameChange"/>
+        <Input type="email" placeholder="Email" name="email" @onBlur="onEmailChange"/>
+        <Input type='text' placeholder="Company" name="company" @onBlur="onCompanyChange"/>
         <select name="country" v-model="selected" >
             <option :key="country" v-for="country in countries" v-bind:value="country">{{ country }}</option>
         </select>
-        <Input type="password" placeholder="Password" name="password" @onBlurr="onChangePassword"/>
+        <Input type="password" placeholder="Password" name="password" @onBlur="onChangePassword"/>
         <button type="button" @click="onSubmit">Register</button>
      </form>
     </div>
@@ -53,6 +53,7 @@ export default {
       },
        onSubmit(e) {
          e.preventDefault();
+         alert(this.email)
           this.authService.register({
               firstName: this.firstName,
               lastName: this.lastName,

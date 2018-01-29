@@ -6,6 +6,7 @@
       <input type="number" name="priority" v-model="todoPriority" placeholder="Priority">
       <button @click.prevent="onSubmit">Submit</button>
     </form>
+     <router-link to="/todo">See all todos</router-link>
   </div>
 
 </template>
@@ -23,8 +24,8 @@ export default {
   },
   methods: {
     onSubmit(){
-      console.log('asd')
-      this.todoService.createTodo({name: this.todoName, priority: this.todoPriority, completed: this.todoCompleted}).then(response => console.log(response.data));
+      this.todoService.createTodo({name: this.todoName, priority: this.todoPriority, completed: this.todoCompleted}).then(response =>  this.$route.push('/todo'));
+     
     }
   },
   created(){

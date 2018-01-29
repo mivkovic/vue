@@ -4,6 +4,8 @@
         <ul>
             <show-todo :key="index" v-for="(todo, index) in todos" :name="todo.name" :completed="todo.completed" :priority="todo.priority" ></show-todo>
         </ul>
+
+        <router-link to="todos/create">New Todo</router-link>
     </div>
 </template>
 
