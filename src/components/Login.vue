@@ -31,7 +31,10 @@ export default {
               email: this.email,
               password: this.password
           }).then((response) => {
+              
+              localStorage.setItem('token', response.data.token);
               console.log(response.data);
+              this.$router.push('todo')
           });
       }
   },

@@ -5,8 +5,17 @@
 </template>
 
 <script>
+import AuthService from './services/auth.service';
+
 export default {
-  name: 'App'
+  name: 'App',
+  created() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      let authService = new AuthService();
+      authService.setAuthHeaders(token);
+    }
+  }
 }
 </script>
 

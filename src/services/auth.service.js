@@ -6,11 +6,17 @@ const ENDPOINTS = {
   'REGISTER': 'register',
   'COUNTRIES': 'countries'
 }
+
 class AuthService {
   login (data) {
     return axios.post(API_URL + ENDPOINTS.LOGIN, data).then((response) => {
-      axios.defaults.headers['Authorization'] = `Bearer ${response.data.token}`
+      this.setAuthHeaders(response.data.token);
+      return response
     })
+  }
+
+  setAuthHeaders (token) {
+    axios.defaults.headers['Authorization'] = `Bearer ${token}`
   }
 
   register (data) {
@@ -19,7 +25,8 @@ class AuthService {
 
   countries () {
     return axios.get(API_URL + ENDPOINTS.COUNTRIES).then(response => response.data)
-  }
+  }  
+
 }
 
 export default AuthService

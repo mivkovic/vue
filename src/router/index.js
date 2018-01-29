@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
-import Todo from '@/components/Todo'
+import ShowTodos from '@/components/Todos/ShowTodos'
+import Create from '@/components/Todos/Create'
 
 Vue.use(Router)
 
@@ -20,8 +21,13 @@ export default new Router({
     },
     {
       path: '/todo',
-      name: 'Todo',
-      component: Todo
+      name: 'ShowTodos',
+      component: ShowTodos
+    },
+    {
+      path: '/todos/create',
+      name: 'Create',
+      component: Create
     }
   ]
 })
