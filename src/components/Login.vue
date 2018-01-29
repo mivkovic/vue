@@ -5,24 +5,19 @@
         <Input type="email" placeholder="Email" name="email" @onBlur="onEmailChange"/>
         <Input type="password" placeholder="Password" name="password" @onBlur="onChangePassword"/>
         <button type="button" @click="onSubmit">Login</button>
+        <router-link to="Register" class='register'>Sign Up</router-link>
      </form>
     </div>
 </template>
 
 <script>
 import Input from './CreateInput.vue';
-import { AuthService } from '../services/auth.service';
+import AuthService from '../services/auth.service';
 
 export default {
-  name:"Login",
+  name:'Login',
   components: {
       Input
-  },
-  data() {
-      return {
-        email: '',
-        pass: ''
-      }
   },
   methods: {
       onEmailChange(email) {
@@ -56,6 +51,18 @@ export default {
         width: 500px;
         display: flex;
         flex-direction:column;
+    }
+    button {
+        padding: 10px 25px;
+        margin: 10px 0;
+        border-radius: 4px;
+        cursor: pointer;
+        border:1px solid gray;
+    }
+    .register{
+        text-decoration: none;
+        margin-top: 15px;
+        color:black;
     }
 </style>
 

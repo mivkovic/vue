@@ -2,7 +2,6 @@
   <input class='input' :type="type" v-model="value" :name="name" :placeholder="placeholder" @blur="onChange">
 </template>
 
-
 <script>
   export default {
     name: 'CreateInput',
