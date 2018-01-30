@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     onSubmit(){
-      this.todoService.createTodo({name: this.todoName, priority: this.todoPriority, completed: this.todoCompleted}).then(response =>  this.$route.push('/todo'));
+      this.todoService.createTodo({name: this.todoName, priority: this.todoPriority, completed: this.todoCompleted}).then(response =>  this.$router.push('/todo'));
      
     }
   },

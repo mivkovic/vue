@@ -4,6 +4,7 @@ import Login from '@/components/Login'
 import Register from '@/components/Register'
 import ShowTodos from '@/components/Todos/ShowTodos'
 import Create from '@/components/Todos/Create'
+import Edit from '@/components/Todos/Edit'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/todos/create',
       name: 'Create',
       component: Create
+    },
+    {
+      path: '/todos/edit/:id',
+      name: 'Edit',
+      component: Edit
     }
   ]
 })
